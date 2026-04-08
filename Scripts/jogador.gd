@@ -1,0 +1,19 @@
+extends CharacterBody2D
+
+
+const SPEED = 500.0
+var direction = Vector2(0,0)
+
+
+
+
+func _physics_process(delta: float) -> void:
+	movimento()
+	move_and_slide()
+	
+	
+	
+func movimento():
+	direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	
+	velocity = SPEED * direction
