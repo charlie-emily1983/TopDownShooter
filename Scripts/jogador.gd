@@ -17,3 +17,8 @@ func movimento():
 	direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
 	velocity = SPEED * direction
+
+
+
+func rotacionar_corpo():
+	look_at(get_global_mouse_position())
