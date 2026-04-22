@@ -1,10 +1,52 @@
 [gd_scene format=3 uid="uid://bfaqwhcuk86vd"]
 
+[ext_resource type="Texture2D" uid="uid://s1ravvefcora" path="res://Assets/All_Fire_Bullet_Pixel_16x16_04.png" id="1_gppq6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3onwi"]
+atlas = ExtResource("1_gppq6")
+region = Rect2(96, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1qxg"]
+atlas = ExtResource("1_gppq6")
+region = Rect2(112, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tj6io"]
+atlas = ExtResource("1_gppq6")
+region = Rect2(128, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u11v5"]
+atlas = ExtResource("1_gppq6")
+region = Rect2(144, 240, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ue462"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3onwi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1qxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tj6io")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u11v5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_byf7s"]
+radius = 5.0990195
 
 [node name="Projetil" type="Area2D" unique_id=1024527087]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1314823226]
 sprite_frames = SubResource("SpriteFrames_ue462")
+frame_progress = 0.86500055
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=612972316]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_byf7s")
