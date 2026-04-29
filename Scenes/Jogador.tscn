@@ -1,24 +1,29 @@
 [gd_scene format=3 uid="uid://e6nc2dblpcn2"]
 
 [ext_resource type="Script" uid="uid://don0ckrkljilv" path="res://Scripts/jogador.gd" id="1_ydbas"]
+[ext_resource type="PackedScene" uid="uid://bfaqwhcuk86vd" path="res://Scenes/projetil.tscn" id="2_0ddml"]
 [ext_resource type="Texture2D" uid="uid://4gje3duvi5w0" path="res://Assets/Screenshot_2025-12-04_1.41.48_PM-removebg-preview.webp" id="2_0up15"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0up15"]
-size = Vector2(64.60588, 43.22686)
+[sub_resource type="CircleShape2D" id="CircleShape2D_0up15"]
+radius = 26.0
 
 [node name="Jogador" type="CharacterBody2D" unique_id=274380678]
 scale = Vector2(2, 2)
 script = ExtResource("1_ydbas")
+projetil = ExtResource("2_0ddml")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=867044937]
-position = Vector2(0, 2.3841858e-07)
+position = Vector2(0, 1.4210855e-14)
 scale = Vector2(0.41791862, 0.52050966)
-shape = SubResource("RectangleShape2D_0up15")
+shape = SubResource("CircleShape2D_0up15")
 
-[node name="sprite" type="Node2D" parent="." unique_id=221169534]
-position = Vector2(-13.5, -4)
-
-[node name="Sprite2D" type="Sprite2D" parent="sprite" unique_id=163350820]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=163350820]
+position = Vector2(26.999998, 0)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_0up15")
+offset = Vector2(-135.00009, -15)
+flip_h = true
 region_rect = Rect2(5, 33, 21, 30)
+
+[node name="EmissorBala" type="Marker2D" parent="." unique_id=1269113641]
+position = Vector2(40, -3.5)

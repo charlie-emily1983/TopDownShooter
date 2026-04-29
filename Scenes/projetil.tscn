@@ -1,52 +1,47 @@
 [gd_scene format=3 uid="uid://bfaqwhcuk86vd"]
 
-[ext_resource type="Texture2D" uid="uid://s1ravvefcora" path="res://Assets/All_Fire_Bullet_Pixel_16x16_04.png" id="1_gppq6"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3onwi"]
-atlas = ExtResource("1_gppq6")
-region = Rect2(96, 240, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e1qxg"]
-atlas = ExtResource("1_gppq6")
-region = Rect2(112, 240, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tj6io"]
-atlas = ExtResource("1_gppq6")
-region = Rect2(128, 240, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u11v5"]
-atlas = ExtResource("1_gppq6")
-region = Rect2(144, 240, 16, 16)
+[ext_resource type="Script" uid="uid://t7ppqvuo4ykh" path="res://Scenes/projetil.gd" id="1_3onwi"]
+[ext_resource type="Texture2D" uid="uid://dycict41lui7v" path="res://Assets/02.png" id="2_e1qxg"]
+[ext_resource type="Texture2D" uid="uid://d0r3cx4mjhudu" path="res://Assets/14.png" id="3_tj6io"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ue462"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3onwi")
+"texture": ExtResource("2_e1qxg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_e1qxg")
+"texture": ExtResource("2_e1qxg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tj6io")
+"texture": ExtResource("3_tj6io")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u11v5")
+"texture": ExtResource("2_e1qxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tj6io")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tj6io")
 }],
 "loop": true,
 "name": &"default",
-"speed": 12.0
+"speed": 35.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_byf7s"]
-radius = 5.0990195
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u11v5"]
+size = Vector2(76, 14)
 
 [node name="Projetil" type="Area2D" unique_id=1024527087]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_3onwi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1314823226]
 sprite_frames = SubResource("SpriteFrames_ue462")
-frame_progress = 0.86500055
+autoplay = "default"
+frame_progress = 0.4245177
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=612972316]
-position = Vector2(0, 1)
-shape = SubResource("CircleShape2D_byf7s")
+position = Vector2(24, 0)
+shape = SubResource("RectangleShape2D_u11v5")
