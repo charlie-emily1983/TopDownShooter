@@ -14,3 +14,6 @@ func mover():
 	
 	var direcao = (%Jogador.global_position - self.global_position).normalized()
 	velocity = SPEED * direcao
+	
+func tomar_dano():
+	self.queue_free()

@@ -45,3 +45,5 @@ frame_progress = 0.4245177
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=612972316]
 position = Vector2(24, 0)
 shape = SubResource("RectangleShape2D_u11v5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

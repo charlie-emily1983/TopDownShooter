@@ -15,6 +15,10 @@ run/main_scene="uid://bmfmqaasnypqc"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://Assets/icon.svg"
 
+[global_group]
+
+Inimigos=""
+
 [input]
 
 atirar={
