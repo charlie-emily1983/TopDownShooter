@@ -3,14 +3,13 @@
 [ext_resource type="Script" uid="uid://mf2dyj1stenb" path="res://Scenes/inimigo.gd" id="1_nj8y5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nj8y5"]
-size = Vector2(37, 37)
+size = Vector2(46, 47)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nj8y5"]
+radius = 18.439089
 
 [node name="Inimigo" type="CharacterBody2D" unique_id=1932301239 groups=["Inimigos"]]
 script = ExtResource("1_nj8y5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=530018689]
-position = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_nj8y5")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1435410827]
 offset_left = -19.0
@@ -19,3 +18,14 @@ offset_right = 21.0
 offset_bottom = 22.0
 pivot_offset = Vector2(20, 18)
 color = Color(1, 0, 1, 1)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=351618745]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=530018689]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_nj8y5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2028443784]
+shape = SubResource("CircleShape2D_nj8y5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
