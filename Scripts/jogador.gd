@@ -59,4 +59,4 @@ func rotacionar_corpo():
 	look_at(get_global_mouse_position())
 	
 func tomar_dano():
-	queue_free()
+	get_tree().change_scene_to_file("res://Scenes/morte.tscn")

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c44vp67l3wi3e"]
+
+[node name="Morte" type="Node2D" unique_id=505877004]
+
+[node name="Label" type="Label" parent="." unique_id=1529084030]
+offset_left = 472.0
+offset_top = 265.0
+offset_right = 1365.0
+offset_bottom = 342.0
+text = "morreu nobao"

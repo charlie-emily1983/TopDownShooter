@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://don0ckrkljilv" path="res://Scripts/jogador.gd" id="1_ydbas"]
 [ext_resource type="PackedScene" uid="uid://bfaqwhcuk86vd" path="res://Scenes/projetil.tscn" id="2_0ddml"]
 [ext_resource type="Texture2D" uid="uid://4gje3duvi5w0" path="res://Assets/Screenshot_2025-12-04_1.41.48_PM-removebg-preview.webp" id="2_0up15"]
+[ext_resource type="PackedScene" uid="uid://b4oommsdbqegk" path="res://Scenes/kills.tscn" id="4_mspdc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0up15"]
 radius = 26.0
@@ -27,3 +28,5 @@ region_rect = Rect2(5, 33, 21, 30)
 
 [node name="EmissorBala" type="Marker2D" parent="." unique_id=1269113641]
 position = Vector2(40, -3.5)
+
+[node name="Kills" parent="." unique_id=297884748 instance=ExtResource("4_mspdc")]

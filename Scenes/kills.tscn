@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b4oommsdbqegk"]
+
+[ext_resource type="Script" uid="uid://2a1h373mbaiu" path="res://Scripts/kills.gd" id="1_s8cse"]
+
+[node name="Kills" type="CanvasLayer" unique_id=297884748]
+script = ExtResource("1_s8cse")
+
+[node name="mortos" type="Label" parent="." unique_id=399518186]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Kills:"

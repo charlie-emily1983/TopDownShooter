@@ -3,20 +3,22 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 
-
+var jogador = null
 
 func _physics_process(delta: float) -> void:
-	if %Jogador:
+	if jogador:
 		mover ()
 
 	move_and_slide()
 
 func mover():
 	
-	var direcao = (%Jogador.global_position - self.global_position).normalized()
+	var direcao = (jogador.global_position - self.global_position).normalized()
 	velocity = SPEED * direcao
 	
 func tomar_dano():
+	Global.kills += 1
+	
 	self.queue_free()
 
 
